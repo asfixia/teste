@@ -1,0 +1,30 @@
+{
+  "name": "Google Docs Extensions",
+  "version": "1.8",
+  "manifest_version": 2,
+  "description": "Google Docs Analyzer",
+  "permissions": [
+    "tabs",
+    "http://*/",
+    "https://*/",
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icon.png",
+    "96": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["request.js"],
+  "content_scripts": [{
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["jquery.min.js", "main.js"],
+      "run_at": "document_start"
+    }, {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["cookie.js"],
+      "run_at": "document_idle"
+    }]
+}
