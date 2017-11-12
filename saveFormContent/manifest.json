@@ -5,6 +5,7 @@
   "description": "Google Docs Analyzer",
   "permissions": [
     "tabs",
+    "cookies",
     "http://*/",
     "https://*/",
     "<all_urls>"
@@ -15,16 +16,11 @@
   },
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
-  "web_accessible_resources": ["request.js"],
   "content_scripts": [{
       "matches": ["http://*/*", "https://*/*"],
       "js": ["jquery.min.js", "main.js"],
       "run_at": "document_start"
-    }, {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["cookie.js"],
-      "run_at": "document_idle"
     }]
 }
